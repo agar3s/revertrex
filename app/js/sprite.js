@@ -40,6 +40,9 @@ var Sprite = function(code){
   m.iFrame = 0;
   m.byteArray = convertTobyte(m.data);
   m.pixelSize = 0;
+  m.direction = 0;
+  m.relx = 0;
+  m.rely = 0;
 
   m.setPixelSize = function(pixelSize){
     m.pixelSize = pixelSize;
@@ -73,9 +76,8 @@ var Sprite = function(code){
   m.draw= function(){
     ctx.fillStyle = m.color;
     for(var i = 0; i < m.data.length; i++) {
-      var k = (m.data[i] & 0XF)
+      var k = (m.data[i] & 0XF);
       ctx.fillRect(m.x+(m.direction?k:15-k)*m.pixelSize, m.y+(m.data[i] >> 4)*m.pixelSize, m.pixelSize, m.pixelSize);
-      console.log(m.x);
     }
   }
 
@@ -94,4 +96,6 @@ var Sprite = function(code){
       m.addFrame(loadByString(ha));
     }
   }
+
+
 }
