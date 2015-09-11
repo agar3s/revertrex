@@ -87,14 +87,14 @@ function encodeFrame(frame, layer){
   for (var i = 0; i < byteArray.length; i++) {
     var b = byteArray[i];
     var code = '';
-    if(b<0X55){
+    if(b<0X56){
       code = '{';
-    }else if(b<0XAA){
+    }else if(b<0XAC){
       code = '';
     }else{
       code = '~';
     }
-    var byte = b%0X55+0X21;
+    var byte = b%0X56+0X21;
     code += String.fromCharCode(byte);
     encoded+=code;
   }

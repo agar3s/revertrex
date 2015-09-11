@@ -1,6 +1,8 @@
 
 var LayeredSprite = function(sprites){
   var m = this;
+  m.relx = 0;
+  m.rely = 0;
   m.sprites = [];
   for (var i = 0; i < sprites.length; i++) {
     var sprite = new Sprite(sprites[i].key);
@@ -20,7 +22,7 @@ var LayeredSprite = function(sprites){
     m.sprites.map(function(sprite){sprite.draw()});
   };
   m.setPosition = function(x, y){
-    m.sprites.map(function(sprite){sprite.x=x; sprite.y=y;});
+    m.sprites.map(function(sprite){sprite.setPosition(x,y)});
   }
   m.setAnimation = function(name){
     m.sprites.map(function(sprite){sprite.setAnimation(name+sprite.layer)});

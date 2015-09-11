@@ -8,11 +8,15 @@ function gameloop(){
     face.animate();
     eye1.animate();
     eye2.animate();
+    nose.animate();
+    mouth.animate();
     cont=0;
   }
   face.draw();
   eye1.draw();
   eye2.draw();
+  nose.draw();
+  mouth.draw();
 
   ra(gameloop);
 }

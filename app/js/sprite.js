@@ -14,14 +14,14 @@ var loadByString= function(sprite){
   var byteArray=[];
   var byte = 0;
   while(char){
-    var mod = 0X55;
+    var mod = 0X56;
     if(char[0]=='{'){
       char = sprite[++i];
       mod=0;
     }
     if(char[0]=='~'){
       char = sprite[++i];
-      mod=0XAA;
+      mod=0XAC;
     }
     byteArray.push(char.charCodeAt()+mod-0X21);
     char = sprite[++i]
@@ -95,6 +95,11 @@ var Sprite = function(code){
       }
       m.addFrame(loadByString(ha));
     }
+  }
+
+  m.setPosition = function(x, y){
+    m.x = x;
+    m.y = y;
   }
 
 

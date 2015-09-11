@@ -3,12 +3,20 @@ function Shape(head, jaw){
   var m = this;
   m.pixelSize = 1;
   m.sprites = [];
-  var head1 = new Sprite(head);
-  head1.direction = 1;
-  head1.setAnimation('headM');
-  var head2 = new Sprite(head);
+  var head1 = new LayeredSprite([
+    {key:headM, color:'#F1D1B7', layer:'M'},
+    {key:headN, color:'#000', layer:'N'},
+  ]);
+  head1.sprites.map(function(sprite){sprite.direction=1});
+  head1.setAnimation('head');
+
+  var head2 = new LayeredSprite([
+    {key:headM, color:'#F1D1B7', layer:'M'},
+    {key:headN, color:'#000', layer:'N'},
+  ]);
+  head2.setAnimation('head');
   head2.relx = 1;
-  head2.setAnimation('headM');
+
   var jaw1 = new Sprite(jaw);
   jaw1.direction = 1;
   jaw1.rely = 1;
@@ -25,8 +33,7 @@ function Shape(head, jaw){
 
   m.setPosition = function(x, y){
     m.sprites.map(function(sprite){
-      sprite.x = x+sprite.relx*16*m.pixelSize;
-      sprite.y = y+sprite.rely*16*m.pixelSize;
+      sprite.setPosition(x+sprite.relx*16*m.pixelSize, y+sprite.rely*16*m.pixelSize);
     });
   }
 

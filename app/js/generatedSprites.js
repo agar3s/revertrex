@@ -1,17 +1,33 @@
-var eyeN = '~@~A~C';
-var eyeP = 'defghi~/~0~1~2~3~4~B';
-var headM = '{N{O{P{\\{]{^{_{`{k{l{m{n{o{p%&\'()*+56789:;DEFGHIJKTUVWXYZ[defghijktu~!~"~#~$~%~&~/~0~1~2~3~4~5~6~?~@~A~B~C~D~E~F~N~O~P~Q~R~S~T~U~V~^~_~`~a~b~c~d~e~f~n~o~p~q~r~s~t~u~!';
-var jawM = '{({){*{+{,{-{.{/{0{9{:{;{<{={>{?{@{I{J{K{L{M{N{O{P{Y{Z{[{\\{]{^{_{`{i{j{k{l{m{n{o{p%&\'()*+56789:;EFGHIJKVWXYZ[ghijk~#~$~%~&';
+var eyeN = '~>~?~A';
+var eyeP = 'cdefgh~-~.~/~0~1~2~@';
+var headM = '{N{O{P{\\{]{^{_{`{k{l{m{n{o{p$%&\'()*456789:CDEFGHIJSTUVWXYZcdefghijstuv~!~"~#~$~-~.~/~0~1~2~3~4~=~>~?~@~A~B~C~D~L~M~N~O~P~Q~R~S~T~\\~]~^~_~`~a~b~c~d~l~m~n~o~p~q~r~s~t';
+var headN = '';
+var jawM = '{({){*{+{,{-{.{/{0{9{:{;{<{={>{?{@{I{J{K{L{M{N{O{P{Y{Z{[{\\{]{^{_{`{i{j{k{l{m{n{o{p$%&\'()*456789:DEFGHIJUVWXYZfghij~!~"~#~$';
+var mouthP = 'pu~+~,~-~.';
+var noseM = '3CScqrs';
 
 var frames = [
   '', // 0
-  'YXWVUTihgfed', // 1
-  'IHGFEDYXWVUT', // 2
-  'YXWVUTIHGFED', // 3
-  'ihgfedYXWVUT', // 4
-  'E5%{i', // 5
-  '~#gVF6', // 6
-  'W', // 7
+  'XWVUTShgfedc', // 1
+  'HGFEDCXWVUTS', // 2
+  'XWVUTSHGFEDC', // 3
+  'hgfedcXWVUTS', // 4
+  'cSC4$', // 5
+  '{^{]{\\{N', // 6
+  '%{l{k{`{_{P{O', // 7
+  '~M~=~-sdTD5&{p{o{n{m', // 8
+  '~<~,rb', // 9
+  '~K~;cSC43$', // 10
+  '~[~+RB#{j{i{^{]{\\{N{M{L', // 11
+  '~k~Z~J~:~*qa2%{l{k{`{_{[{Z{P{O{K{@{?{>{={<', // 12
+  '~M~=~-spd`TQD5&"{p{o{n{m{h{g{Y{J{;{0{/{-{,', // 13
+  'D4${i', // 14
+  '~!fUE5', // 15
+  'V', // 16
+  '~/~*up', // 17
+  '~?~:~/~*', // 18
+  '~/~*~?~:', // 19
+  'up~/~*', // 20
 ];
 
 var animations = {
@@ -25,10 +41,22 @@ var animations = {
   },
   headM: {
     kf: headM,
-    f: [0]
+    f: [0,5,6,7,8,0,8,7,6,5,0]
+  },
+  headN: {
+    kf: headN,
+    f: [9,10,11,12,13,0,13,12,11,10,9]
   },
   jawM: {
     kf: jawM,
-    f: [5,6,7,7,6,5]
+    f: [14,15,16,16,15,14]
+  },
+  mouthP: {
+    kf: mouthP,
+    f: [0,0,17,0,0,0,18,0,0,0,19,0,0,0,20,0,0]
+  },
+  noseM: {
+    kf: noseM,
+    f: [0]
   },
 };
